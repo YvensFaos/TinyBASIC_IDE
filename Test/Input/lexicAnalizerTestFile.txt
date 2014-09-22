@@ -1,0 +1,6 @@
+﻿LET A = 4
+LET B = 5*6
+LET C = B/A
+LET d = 1
+LET D=5
+LET E=5+(3-4)

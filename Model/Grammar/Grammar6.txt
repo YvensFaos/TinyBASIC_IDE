@@ -1,0 +1,18 @@
+﻿codigo:linha codigo|#
+linha:num instrução|instrução
+instrução:PRINT listaprint|INPUT var varl|LET var = exp|GOTO exp|GOSUB exp|RETURN|IF exp oprel exp THEN instrução|REM string|CLEAR|RUN exp expl|LIST exp expl
+listaprint:itemprint itemprintl
+itemprint:exp|string
+itemprintl:separador itemprint itemprintl|#
+exp:termo termol
+expl:, exp expl|#
+termo:valor|var|( exp )|func
+termol:op termo termol|#
+valor:num|sinal num
+var:A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+varl:, var varl|#
+sinal:+|-
+func:RND ( exp )
+op:+|-|*|/
+oprel:<|<>|<=|>|><|>=|=
+separador:,|;

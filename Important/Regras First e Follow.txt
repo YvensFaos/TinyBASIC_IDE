@@ -1,0 +1,38 @@
+﻿First
+
+1: first(a) = a
+2: Sendo A -> a Beta
+   first(A) = a
+3: Sendo A -> X1 X2 X3 X4 ... Xn+1
+   first(A) = first(X1) + first(X2)[se houver vazio em X1] + ... + first(Xn+1)[se houver vazio em Xn]
+
+Follow
+
+1: follow(S) = $
+2: Sendo A -> alfa B Beta
+   follow(B) = first(Beta) - {vazio}
+3: Sendo A -> alfa B 
+   ou    A -> alfa B Beta [se Beta tiver vazio]
+   follow(B) += follow(A)
+
+*
+Sendo A -> X1 X2 X3
+
+follow(X1) += first(X2) - {vazio}
+follow(X1) += first(X3) - {vazio} -> se first(X2) tiver vazio
+
+follow(X2) += first(X3) - {vazio}
+
+follow(X3) += follow(A); //alfa = [X1 X2] e beta = vazio
+follow(X2) += follow(A); -> se X3 tiver vazio //alfa = [X1] e beta = [X3] -> vazio
+follow(X1) += follow(A); -> se X2 e X3 tiverem vazio
+
+**
+4: 
+A -> a
+follow(A) = vazio
+
+5:
+A -> B
+Regra 2: alfa = vazio, B = B, beta = vazio
+follow(B) += follow(A)

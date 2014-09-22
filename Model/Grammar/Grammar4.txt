@@ -1,0 +1,7 @@
+﻿lexp:atomo|lista
+atomo:num|ide
+lista:( lexp-seq )
+lexp-seq:lexp lexp-seql
+lexp-seql:, lexp-seql|#
+num:0|1|2
+ide:A|B|C

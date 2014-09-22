@@ -1,0 +1,35 @@
+﻿
+Gramática:
+
+G
+{
+S = aB | bA | aa
+A = Ab | bb | vazio
+B = C  | a  | b
+C = ccc| vazio
+}
+
+1 - Tirar recursão a esquerda
+A  = bbA' | A'
+A' = bA'  | vazio
+
+G'
+{
+S  = aB | bA | aa
+A  = bbA' | A'
+A' = bA'  | vazio
+B  = C  | a  | b
+C  = ccc| vazio
+}
+
+first(S ) = a, b
+first(A ) = b, first(A') - vazio
+first(A') = b, vazio
+first(B ) = first(C) - c, vazio, a, b
+first(C ) = c | vazio
+
+follow(S ) = $
+follow(A ) =
+follow(A') =
+follow(B ) =
+follow(C ) =

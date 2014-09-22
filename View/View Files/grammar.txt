@@ -1,0 +1,19 @@
+﻿Gramática = 
+{ 	
+codigo := linha {linha}
+linha := num instrução CR | instrução CR
+instrução := PRINT listaprint | INPUT var {,var} | LET var = exp | GOTO exp	| GOSUB exp | RETURN | IF exp oprel exp THEN instrução | REM string	| CLEAR | RUN exp {,exp} | LIST exp {,exp}  
+listaprint := itemprint {separador itemprint}
+itemprint := exp | string
+exp := termo {op termo}
+termo := valor | var | (exp) | func
+valor := num | sinal num
+num := dig {dig}
+var := A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+sinal := + | -
+func :=	RND (exp)
+dig := 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 
+op := + | - | * | /
+oprel := < [ > | = | ε ]  |  > [ < | = | ε ]  |  =
+separador := , | ; 			
+}

@@ -1,0 +1,11 @@
+﻿linha:num instrução|instrução
+instrução:PRINT listaprint|INPUT listavar|LET var = exp|GOTO exp|GOSUB exp|RETURN|REM string|CLEAR|LIST exp|IF exp oprel exp THEN instrução
+listaprint:itemprint|itemprint separador listaprint
+listavar:var|var separador listavar
+itemprint:string|exp
+exp:termo op exp|termo
+termo:num|var|( exp )|func
+op:+|-|/|*
+oprel:<|<>|<=|>|><|>=|=
+separador:,|;
+func:RND ( exp )

@@ -1,0 +1,7 @@
+﻿lexp
+atomo
+lista
+lexp-seq
+lexp-seql
+num
+ide

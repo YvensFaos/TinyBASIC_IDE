@@ -1,0 +1,9 @@
+﻿LET A = 4
+LET B = 5*6
+123 LET C = B/A
+PRINT 2+3, "Olá"
+INPUT D
+GOTO 123
+GOSUB (123)
+IF (A-B) = C THEN LET C = C-1
+LIST A,B,C

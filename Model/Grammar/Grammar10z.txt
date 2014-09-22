@@ -1,0 +1,10 @@
+﻿instrucao:LET var = exp
+exp:termo termol
+expl:, exp expl|#
+termo:valor|var|( exp )|func
+termol:op termo termol|#
+valor:num|sinal num
+varl:, var varl|#
+func:RND ( exp )
+sinal:+|-
+op:sinal|*|/

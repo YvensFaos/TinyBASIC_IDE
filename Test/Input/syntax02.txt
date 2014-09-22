@@ -1,0 +1,10 @@
+﻿LET a = 6
+LET 123
+IF X - = THEN IF X - =
+LIST , , ,
+PRINT a
+IF A >>> C
+LET A = 6.6
+IF B > > > C
+LET C = (A +
+INPUC A = 2

@@ -1,0 +1,10 @@
+﻿linha
+instrucao
+listaprint
+itemprint
+exp
+termo
+op
+oprel
+separador
+listavar

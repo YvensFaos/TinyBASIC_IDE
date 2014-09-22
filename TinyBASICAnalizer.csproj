@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{79AB2EF3-B082-47C5-92B8-9DB20F2C086C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TinyBASICAnalizer</RootNamespace>
+    <AssemblyName>TinyBASICAnalizer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.GLEE">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Research\GLEE\bin\Microsoft.GLEE.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.GLEE.Drawing">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Research\GLEE\bin\Microsoft.GLEE.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.GLEE.GraphViewerGDI">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Research\GLEE\bin\Microsoft.GLEE.GraphViewerGDI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADS\Automata.cs" />
+    <Compile Include="ADS\AutomataStructure\PowerSet.cs" />
+    <Compile Include="ADS\AutomataStructure\State.cs" />
+    <Compile Include="ADS\AutomataStructure\StateTransiction.cs" />
+    <Compile Include="ADS\GrammarAutomata\GrammarDeterministicAutomata.cs" />
+    <Compile Include="ADS\GrammarAutomata\GrammarNonDeterministicAutomata.cs" />
+    <Compile Include="ADS\GrammarAutomata\GrammarPowerSet.cs" />
+    <Compile Include="ADS\GrammarAutomata\GrammarState.cs" />
+    <Compile Include="ADS\SimpleStack.cs" />
+    <Compile Include="Control\AscendentDealer.cs" />
+    <Compile Include="Control\CodeGenerator.cs" />
+    <Compile Include="Control\GraphAutomata.cs" />
+    <Compile Include="Control\LexicAnalizer.cs" />
+    <Compile Include="Control\NonRecursiveDealer.cs" />
+    <Compile Include="Control\SyntaxAnalizer.cs" />
+    <Compile Include="Control\Transducer.cs" />
+    <Content Include="Important\ExemploFirstFollow.txt" />
+    <Compile Include="Control\VirtualMachine.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Code\Variable.cs" />
+    <Compile Include="Model\First.cs" />
+    <Compile Include="Model\Grammar.cs" />
+    <Compile Include="Model\NonTerminal.cs" />
+    <Compile Include="Model\ReservedWord.cs" />
+    <Compile Include="Model\Symbol.cs" />
+    <Compile Include="Model\SyntaxTable.cs" />
+    <Compile Include="Model\TableEntry.cs" />
+    <Compile Include="Model\Terminal.cs" />
+    <Compile Include="Model\Token.cs" />
+    <Compile Include="Model\TokenType.cs" />
+    <Compile Include="Persistence\IOUtils.cs" />
+    <Compile Include="Persistence\Logger.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\AutomataTest.cs" />
+    <Compile Include="Test\CodeGeneratorTest.cs" />
+    <Compile Include="Test\LexicTest.cs" />
+    <Compile Include="Test\StackTest.cs" />
+    <Compile Include="Test\SyntaxTest.cs" />
+    <Compile Include="View\ChangeIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChangeIndex.Designer.cs">
+      <DependentUpon>ChangeIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActualGrammarWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ActualGrammarWindow.Designer.cs">
+      <DependentUpon>ActualGrammarWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FileHandlerForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FileHandlerForm.Designer.cs">
+      <DependentUpon>FileHandlerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FirstAndFollowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FirstAndFollowForm.Designer.cs">
+      <DependentUpon>FirstAndFollowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GeneratedCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GeneratedCodeForm.Designer.cs">
+      <DependentUpon>GeneratedCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GrammarWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GrammarWindow.Designer.cs">
+      <DependentUpon>GrammarWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\InputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\InputForm.Designer.cs">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LexicAnalizerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LexicAnalizerForm.Designer.cs">
+      <DependentUpon>LexicAnalizerForm.cs</DependentUpon>
+    </Compile>
+    <Content Include="Model\Grammar\Grammar9z.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\Grammar10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\Grammar10z.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\Grammar9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\NonTerminalList10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\NonTerminalList9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\TerminalList10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\TerminalList9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\TerminalList8.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\NonTerminalList8.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\Grammar7.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\Grammar8.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\NonTerminalList7.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\TerminalList7.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\View Files\grammar.txt">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\ChangeIndex.resx">
+      <DependentUpon>ChangeIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ActualGrammarWindow.resx">
+      <DependentUpon>ActualGrammarWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FileHandlerForm.resx">
+      <DependentUpon>FileHandlerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FirstAndFollowForm.resx">
+      <DependentUpon>FirstAndFollowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GeneratedCodeForm.resx">
+      <DependentUpon>GeneratedCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GrammarWindow.resx">
+      <DependentUpon>GrammarWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\InputForm.resx">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LexicAnalizerForm.resx">
+      <DependentUpon>LexicAnalizerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Important\EBNF tiny basic.doc" />
+    <None Include="Important\TinyBasicDiagram.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Error\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Important\anotacoes0303.jpeg" />
+    <Content Include="Important\architeture0103.JPG" />
+    <Content Include="Important\EBNF tiny basic.txt" />
+    <Content Include="Important\Regras First e Follow.txt" />
+    <Content Include="Important\transdutor0303.jpeg" />
+    <Content Include="Model\Grammar\TerminalList6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\NonTerminalList6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\Grammar6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\Grammar.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\Grammar2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\Grammar3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\Grammar4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\Grammar5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\NonTerminalList.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\NonTerminalList2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\NonTerminalList3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\NonTerminalList4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\NonTerminalList5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\TerminalList.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\TerminalList2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\TerminalList3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\TerminalList4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\Grammar\TerminalList5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test\Input\syntax02.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test\Input\syntax01.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test\Input\lexicAnalizerTestFile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test\Input\syntax03.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,56 @@
+﻿Esse documento foi criado para ser mais fácil de ser manipulado na própria IDE do Visual Studio.
+
+Gramática = 
+{ 	
+codigo	  :=	linha {linha}
+linha     :=	num instrução CR | instrução CR
+instrução :=	PRINT listaprint |
+				INPUT var {,var} |
+				LET var = exp	 |
+				GOTO exp		 |
+				GOSUB exp		 |
+				RETURN			 |
+				IF exp oprel exp THEN exp	| -> acredito que depois do THEN deveria ser exp OU instrução
+				REM string		 |
+				CLEAR			 |
+	-> REMOVER  RUN				 |
+				RUN exp {,exp}   |
+	-> REMOVER	LIST			 |
+				LIST exp {,exp}  
+listaprint:=	itemprint {separador itemprint}
+itemprint :=	exp | string
+exp		  :=	termo {op termo}
+termo	  :=	valor | var | (exp) | func
+valor	  :=	num | sinal num
+num		  :=	dig {dig}
+var		  :=	A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+sinal	  :=	+ | -
+func	  :=	RND (exp)
+dig		  :=	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 
+op		  :=	+ | - | * | /
+oprel	  :=	< [ > | = | ε ]  |  > [ < | = | ε ]  |  =
+separador :=	, | ; 			
+}
+
+Gramática usada pelo Analisador Descendente Não Recursivo
+codigo:linha codigo|#
+linha:num instrução|instrução
+instrução:PRINT listaprint|INPUT var varl|LET var = exp|GOTO exp|GOSUB exp|RETURN|IF exp oprel exp THEN exp|REM string|CLEAR|RUN exp expl|LIST exp expl
+listaprint:itemprint itemprintl
+itemprint:exp|string
+itemprintl:separador itemprint itemprintl|#
+exp:termo termol
+expl:, exp expl|#
+termo:valor|var|( exp )|func
+termol:op termo termol|#
+valor:num|sinal num
+num:dig numl
+numl:dig|#
+var:A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+varl:, var varl|#
+sinal:+|-
+func:RND ( exp )
+dig:0|1|2|3|4|5|6|7|8|9
+op:+|-|*|/
+oprel:<|<>|<=|>|><|>=|=
+separador:,|; 	

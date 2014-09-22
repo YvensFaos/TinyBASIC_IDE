@@ -1,0 +1,6 @@
+﻿exp:termo expl
+expl:+ termo expl|- termo expl|#
+termo:fator termol
+termol:* fator termol|/ fator termol|#
+fator:var|( exp )
+var:A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z

@@ -1,0 +1,6 @@
+﻿exp
+expl
+termo
+termol
+fator
+var

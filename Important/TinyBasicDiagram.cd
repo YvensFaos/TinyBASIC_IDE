@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TinyBASICAnalizer.Control.LexicAnalizer">
+    <Position X="2.75" Y="2" Width="3" />
+    <AssociationLine Name="LexicTransducer" Type="TinyBASICAnalizer.Control.Transducer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.188" Y="2" />
+        <Point X="3.188" Y="1.052" />
+        <Point X="2.5" Y="1.052" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAACAAIAAEAgAAQACAACAAgEgAIAAAAAgAAAEAA=</HashCode>
+      <FileName>Control\LexicAnalizer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LexicTransducer" />
+      <Property Name="Log" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TinyBASICAnalizer.Control.Transducer">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\Transducer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TinyBASICAnalizer.Model.Token">
+    <Position X="0.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAUAEQMgAQAgKCAAAAAAIEAAQAooAAIAAA=</HashCode>
+      <FileName>Model\Token.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TinyBASICAnalizer.Persistence.IOUtils">
+    <Position X="2.75" Y="6.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAIAAEgEBAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Persistence\IOUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TinyBASICAnalizer.Persistence.Logger">
+    <Position X="6.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAACAAIIAAAAAAAABAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Persistence\Logger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TinyBASICAnalizer.MainForm">
+    <Position X="13.25" Y="2" Width="3.75" />
+    <AssociationLine Name="Lexic" Type="TinyBASICAnalizer.Control.LexicAnalizer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.125" Y="2" />
+        <Point X="15.125" Y="1.625" />
+        <Point X="5.375" Y="1.625" />
+        <Point X="5.375" Y="2" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>DQCANQQsEjQggiMEgSCToAWLKAqCAAFABgCiACgIoCE=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="syntaxAnalizerType" />
+      <Property Name="Lexic" />
+      <Property Name="Syntax" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TinyBASICAnalizer.View.FileHandlerForm">
+    <Position X="17.25" Y="5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAQAAACAAAAAIAACAAAACAAAAAAAAAiQAAAAAAAA=</HashCode>
+      <FileName>View\FileHandlerForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TinyBASICAnalizer.View.LexicAnalizerForm">
+    <Position X="17.25" Y="2" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAACAAABAAACCAAAACAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>View\LexicAnalizerForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TinyBASICAnalizer.Control.SyntaxAnalizer">
+    <Position X="8.25" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAgAAKAkAgAYAAAAkAkACQCIIAAATFYAAAAkBAAA=</HashCode>
+      <FileName>Control\SyntaxAnalizer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Dealer" />
+      <Property Name="Type" />
+      <Property Name="Lexic" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TinyBASICAnalizer.Model.Symbol">
+    <Position X="4" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AnAAAAAQAIAEAcBEAACCAAACAkAAgAACAAAgAAAABAA=</HashCode>
+      <FileName>Model\Symbol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TinyBASICAnalizer.Model.Terminal">
+    <Position X="4" Y="14" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAEAAIAAAQAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Model\Terminal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TinyBASICAnalizer.Model.NonTerminal">
+    <Position X="7.25" Y="10.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AgABABAAIEAgAQgEACBAAQJgCAAIKAEAAAABCAAAAAA=</HashCode>
+      <FileName>Model\NonTerminal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TinyBASICAnalizer.Control.NonRecursiveDealer">
+    <Position X="10.5" Y="11.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAAQAAAEAQAAAAAAAAAAAgIAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Control\NonRecursiveDealer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TinyBASICAnalizer.Model.First">
+    <Position X="10.5" Y="14.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAEDAAAAAAA=</HashCode>
+      <FileName>Model\First.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TinyBASICAnalizer.ADS.Automata&lt;T, E&gt;">
+    <Position X="13.25" Y="13.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QEAAAEQAAAQAAEAKAAAAAAAAAAAAGAAAAAAAACAABAA=</HashCode>
+      <FileName>ADS\Automata.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_initialState" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TinyBASICAnalizer.ADS.AutomataStructure.State&lt;T, E&gt;">
+    <Position X="17" Y="13.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>BACAAAAAAAAAFACEgAAIAgAAAAAAAIAAAAACAAAEABA=</HashCode>
+      <FileName>ADS\AutomataStructure\State.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_transictions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="TinyBASICAnalizer.ADS.AutomataStructure.StateTransiction&lt;T, E&gt;">
+    <Position X="21.75" Y="13" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAIAAAAAEAAAAAAAAAAAAAAAAAAAAAAACABA=</HashCode>
+      <FileName>ADS\AutomataStructure\StateTransiction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TinyBASICAnalizer.ADS.AutomataStructure.PowerSet&lt;T, E&gt;">
+    <Position X="26" Y="13" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AACkABAAQAAABACEAAABiyAAIAAAIAAAAAAAQAAIAAA=</HashCode>
+      <FileName>ADS\AutomataStructure\PowerSet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_powerSetState" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_transictions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Enum Name="TinyBASICAnalizer.Model.TokenType">
+    <Position X="0.5" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAEAAAAAAAAQABAgAAAAAABAAAAggBAAQIAA=</HashCode>
+      <FileName>Model\TokenType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TinyBASICAnalizer.Model.ReservedWord">
+    <Position X="0.5" Y="12" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAoAAAAAAiIAUAACAQBCQAEAAAAEAAAA=</HashCode>
+      <FileName>Model\ReservedWord.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TinyBASICAnalizer.Control.SyntaxAnalizerType">
+    <Position X="9.5" Y="8.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAABAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Control\SyntaxAnalizer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
